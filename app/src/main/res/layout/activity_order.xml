@@ -11,41 +11,34 @@
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:textSize="25dp"
-        android:text="Welcome Do You Want Order Know."/>
+        android:text="Esbriba su information para ordenar."/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="25sp"
         android:id="@+id/TypeName"
-        android:hint="Name"/>
+        android:hint="Nombre"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="25sp"
         android:id="@+id/TypePhone"
-        android:hint="phone"/>
+        android:hint="Telefono"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="25sp"
         android:id="@+id/TypeAddress"
-        android:hint="address"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:id="@+id/TypeOfFood"
-        android:hint="what type food to order"/>
+        android:hint="Direction"/>
 
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Finish"
+        android:text="Ordenar"
         android:id="@+id/tanksBTN"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
