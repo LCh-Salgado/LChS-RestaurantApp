@@ -36,7 +36,6 @@ public class OrderActivity extends AppCompatActivity {
         typeN = (EditText)findViewById(R.id.TypeName);
         typePh = (EditText)findViewById(R.id.TypePhone);
         typeA = (EditText)findViewById(R.id.TypeAddress);
-        typeF = (EditText)findViewById(R.id.TypeOfFood);
         mAddFab = (FloatingActionButton)findViewById(R.id.add_fab);
 
         tankiuBTN.setOnClickListener(new View.OnClickListener() {
@@ -46,7 +45,7 @@ public class OrderActivity extends AppCompatActivity {
                 duration = Toast.LENGTH_SHORT;
                 myToast = Toast.makeText(OrderActivity.this, toastMsg, duration);
                 myToast.show();
-                finishO = new Intent(OrderActivity.this, FoodActivity.class);
+                finishO = new Intent(OrderActivity.this, FoodOrderActivity.class);
                 startActivity(finishO);
 
             }

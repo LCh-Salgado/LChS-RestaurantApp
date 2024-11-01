@@ -11,7 +11,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class FoodActivity extends AppCompatActivity {
+public class FoodOrderActivity extends AppCompatActivity {
 
     int image;
     Button orderK;
@@ -20,18 +20,19 @@ public class FoodActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_food);
+        setContentView(R.layout.activity_food_order);
         orderK = (Button)findViewById(R.id.orderI);
 
-
     orderK.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            welcomeOrderK = new Intent(FoodActivity.this, OrderActivity.class);
-            welcomeOrderK.putExtra("Image", image);
-            startActivity(welcomeOrderK);
-        }
-    });
+         @Override
+         public void onClick(View view) {
+             welcomeOrderK = new Intent(FoodOrderActivity.this, OrderActivity.class);
+             welcomeOrderK.putExtra("Image", image);
+             startActivity(welcomeOrderK);
+            }
+        });
+
+
 
     }
 }

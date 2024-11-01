@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     viewM.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            goToM = new Intent(MainActivity.this, FoodActivity.class);
+            goToM = new Intent(MainActivity.this, FoodOrderActivity.class);
             goToM.putExtra("Image", image);
             startActivity(goToM);
 
