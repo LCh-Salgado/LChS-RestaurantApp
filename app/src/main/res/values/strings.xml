@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">RestaurantAppLCh</string>
+    <string-array name="fillings_array">
+        <item>Revueltas</item>
+        <item>Queso</item>
+        <item>Frijol</item>
+        <item>Loroco con queso</item>
+        <item>chicarron</item>
+
+    </string-array>
 
 </resources>
