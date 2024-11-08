@@ -27,6 +27,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/fillings"/>
 
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,7 +53,7 @@
             android:textAlignment="center"
             android:textStyle="bold"
             android:text="0"
-            android:id="@+id/howMuchBTN"
+            android:id="@+id/howMuchTV"
             android:textSize="30dp"/>
 
         <Button
@@ -64,7 +65,12 @@
 
     </LinearLayout>
 
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="typeInfo"
+        android:id="@+id/typeInBTN"/>
 
 
 </LinearLayout>

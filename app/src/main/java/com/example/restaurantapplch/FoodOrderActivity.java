@@ -18,24 +18,27 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class FoodOrderActivity extends AppCompatActivity {
 
+//    int typeInfoInt;
     int howMany;
-    int image;
-    Button orderK;
-    Button orderM;
-    Intent welcomeOrderK;
+    Button pMenosBTN;
+    Button pMasBTN;
+    Intent typeInfoIntent;
     Spinner spinnerFillings;
-
-    TextView howMuchBTN;
+//    Spinner spinnerF;
+    Button typeIBTN;
+    TextView howMuchTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         howMany = 0;
         setContentView(R.layout.activity_food_order);
-        orderK = (Button)findViewById(R.id.orderMenosBTN);
-        orderM = (Button)findViewById(R.id.orderMasBTN);
-        howMuchBTN = (TextView)findViewById(R.id.howMuchBTN);
+        pMenosBTN = (Button)findViewById(R.id.orderMenosBTN);
+        pMasBTN = (Button)findViewById(R.id.orderMasBTN);
+        typeIBTN = (Button)findViewById(R.id.typeInBTN);
+        howMuchTV = (TextView)findViewById(R.id.howMuchTV);
         spinnerFillings = (Spinner) findViewById(R.id.fillings);
+//        spinnerF = (Spinner)findViewById(R.id.filling);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.fillings_array,
@@ -45,36 +48,51 @@ public class FoodOrderActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerFillings.setAdapter(adapter);
 
-        public class SpinnerActivity extends Activity implements AdapterView.OnItemSelectedListener{
-
-            public <view> void onItemSelected(AdapterView<?> parent, View, view, int pos, long id){
-
-            }
-
-            public  void  onNothingSelected(AdapterView<?> parent) {
-
-            }
-
-            Spinner spinner = (Spinner) findViewById(R.id.fillings);
-spinner.setOnItemSelectedListener(this);
-        }
-
-
-
-
-        orderK.setOnClickListener(new View.OnClickListener() {
+        pMenosBTN.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View view) {
-             howMany ++;
-             String s=Integer.toString(howMany);
-             howMuchBTN.setText(s);
-             welcomeOrderK = new Intent(FoodOrderActivity.this, OrderActivity.class);
-             welcomeOrderK.putExtra("Image", image);
-             startActivity(welcomeOrderK);
+             howMany --;
+             String sMenos=Integer.toString(howMany);
+             howMuchTV.setText(sMenos);
+
+
+            }
+        });
+        pMasBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                howMany ++;
+                String sMas=Integer.toString(howMany);
+                howMuchTV.setText(sMas);
+
+
+            }
+        });
+        typeIBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                typeInfoIntent = new Intent(FoodOrderActivity.this, OrderActivity.class);
+//                typeInfoIntent.putExtra(typeInfoInt);
+                startActivity(typeInfoIntent);
             }
         });
 
-
-
     }
+
+    private class SpinnerActivity extends Activity implements AdapterView.OnItemSelectedListener{
+        public <view> void onItemSelected(AdapterView<?> parent, int pos, long id){
+
+                }
+
+                @Override
+                public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                }
+
+                public  void  onNothingSelected(AdapterView<?> parent) {
+
+                }
+
+                Spinner spinner = (Spinner) findViewById(R.id.fillings);
+            }
 }
