@@ -25,8 +25,11 @@ public class FoodOrderActivity extends AppCompatActivity {
     Intent typeInfoIntent;
     Spinner spinnerFillings;
 //    Spinner spinnerF;
-    Button typeIBTN;
     TextView howMuchTV;
+    Button orderMoreBTN;
+    Button orderLessBTN;
+    Button typeIBTN;
+    int cuantasPupusas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +38,12 @@ public class FoodOrderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_food_order);
         pMenosBTN = (Button)findViewById(R.id.orderMenosBTN);
         pMasBTN = (Button)findViewById(R.id.orderMasBTN);
-        typeIBTN = (Button)findViewById(R.id.typeInBTN);
         howMuchTV = (TextView)findViewById(R.id.howMuchTV);
         spinnerFillings = (Spinner) findViewById(R.id.fillings);
+        orderMoreBTN = (Button)findViewById(R.id.ordenarMasBTN);
+        orderLessBTN = (Button)findViewById(R.id.ordenarMenosBTN);
+        typeIBTN = (Button)findViewById(R.id.typeInBTN);
+
 //        spinnerF = (Spinner)findViewById(R.id.filling);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this,
@@ -65,6 +71,14 @@ public class FoodOrderActivity extends AppCompatActivity {
                 String sMas=Integer.toString(howMany);
                 howMuchTV.setText(sMas);
 
+
+            }
+        });
+        orderMoreBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cuantasPupusas ++;
+                String sMore=Integer.toString(cuantasPupusas);
 
             }
         });
