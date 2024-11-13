@@ -22,26 +22,33 @@ public class FoodOrderActivity extends AppCompatActivity {
     int howMany;
     Button pMenosBTN;
     Button pMasBTN;
+
     Intent typeInfoIntent;
     Spinner spinnerFillings;
 //    Spinner spinnerF;
     TextView howMuchTV;
-    Button orderMoreBTN;
-    Button orderLessBTN;
+
+//    Button orderMorePTBTN;
+//    Button orderLessPTBTN;
     Button typeIBTN;
-    int cuantasPupusas;
+//    int cuantasPasteless;
+//    TextView cuantassTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         howMany = 0;
         setContentView(R.layout.activity_food_order);
-        pMenosBTN = (Button)findViewById(R.id.orderMenosBTN);
+
+        pMenosBTN = (Button)findViewById(R.id.orderMenosPBTN);
         pMasBTN = (Button)findViewById(R.id.orderMasBTN);
         howMuchTV = (TextView)findViewById(R.id.howMuchTV);
+
         spinnerFillings = (Spinner) findViewById(R.id.fillings);
-        orderMoreBTN = (Button)findViewById(R.id.ordenarMasBTN);
-        orderLessBTN = (Button)findViewById(R.id.ordenarMenosBTN);
+
+//        orderMorePTBTN = (Button)findViewById(R.id.ordenarMasPTBTN);
+//        orderLessPTBTN = (Button)findViewById(R.id.ordenarMenosPTBTN);
+
         typeIBTN = (Button)findViewById(R.id.typeInBTN);
 
 //        spinnerF = (Spinner)findViewById(R.id.filling);
@@ -74,14 +81,25 @@ public class FoodOrderActivity extends AppCompatActivity {
 
             }
         });
-        orderMoreBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cuantasPupusas ++;
-                String sMore=Integer.toString(cuantasPupusas);
-
-            }
-        });
+//        orderMorePTBTN.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                cuantasPasteless ++;
+//                String sMore=Integer.toString(cuantasPasteless);
+//                cuantassTV.setText(sMore);
+//
+//            }
+//        });
+//        orderLessPTBTN.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                cuantasPasteless --;
+//                String sLess=Integer.toString(cuantasPasteless);
+//                cuantassTV.setText(sLess);
+//
+//
+//            }
+//        });
         typeIBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
