@@ -1,20 +1,15 @@
 <resources>
     <string name="app_name">RestaurantAppLCh</string>
     <string-array name="fillings_array">
-        <item>Revueltas</item>
-        <item>Queso</item>
-        <item>Frijolcon queso</item>
-        <item>Loroco con queso</item>
-        <item>Chicarron con queso</item>
-        <item>Pupusa Loca</item>
-        <item>Ayote con queso</item>
-        <item>Jalapeno con queso</item>
+        <item>Revueltas $3.50</item>
+        <item>Queso $3.00</item>
+        <item>Frijol con queso $3.00</item>
+        <item>Loroco con queso $3.50</item>
+        <item>Chicarron con queso $3.50</item>
+        <item>Pupusa Loca $4.00</item>
+        <item>Ayote con queso $3.00</item>
+        <item>Jalapeno con queso $3.50</item>
     </string-array>
 
-
-    <string-array name="fillingPasteles_array">
-    <item>Pollo</item>
-    <item>Carne molida</item>
-    </string-array>
 
 </resources>

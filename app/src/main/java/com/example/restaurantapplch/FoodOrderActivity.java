@@ -20,17 +20,20 @@ public class FoodOrderActivity extends AppCompatActivity {
 
 //    int typeInfoInt;
     int howMany;
+    String fillings;
     Button pMenosBTN;
     Button pMasBTN;
 
-    Intent typeInfoIntent;
+    Intent addToCardIntent;
+    Intent typeInfooIntent;
     Spinner spinnerFillings;
 //    Spinner spinnerF;
     TextView howMuchTV;
 
 //    Button orderMorePTBTN;
 //    Button orderLessPTBTN;
-    Button typeIBTN;
+    Button addToCadBTN;
+    Button typeInfoBTN;
 //    int cuantasPasteless;
 //    TextView cuantassTV;
 
@@ -38,6 +41,7 @@ public class FoodOrderActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         howMany = 0;
+        fillings = "";
         setContentView(R.layout.activity_food_order);
 
         pMenosBTN = (Button)findViewById(R.id.orderMenosPBTN);
@@ -49,7 +53,8 @@ public class FoodOrderActivity extends AppCompatActivity {
 //        orderMorePTBTN = (Button)findViewById(R.id.ordenarMasPTBTN);
 //        orderLessPTBTN = (Button)findViewById(R.id.ordenarMenosPTBTN);
 
-        typeIBTN = (Button)findViewById(R.id.typeInBTN);
+        addToCadBTN = (Button)findViewById(R.id.addToTheCardBTN);
+        typeInfoBTN = (Button)findViewById(R.id.typeInfoBTN);
 
 //        spinnerF = (Spinner)findViewById(R.id.filling);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
@@ -100,12 +105,18 @@ public class FoodOrderActivity extends AppCompatActivity {
 //
 //            }
 //        });
-        typeIBTN.setOnClickListener(new View.OnClickListener() {
+        addToCadBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                typeInfoIntent = new Intent(FoodOrderActivity.this, OrderActivity.class);
-//                typeInfoIntent.putExtra(typeInfoInt);
-                startActivity(typeInfoIntent);
+                fillings=spinnerFillings.getSelectedItem().toString();
+            }
+        });
+        typeInfoBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                typeInfooIntent = new Intent(FoodOrderActivity.this, OrderActivity.class);
+                startActivity(typeInfooIntent);
+
             }
         });
 
