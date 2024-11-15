@@ -3,6 +3,7 @@ package com.example.restaurantapplch;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,6 +21,10 @@ public class FoodOrderActivity extends AppCompatActivity {
 
 //    int typeInfoInt;
     int howMany;
+    double subTotal;
+    TextView subTotalTV;
+    TextView taxTotalTV;
+    Pupusas deliciuosP;
     String fillings;
     Button pMenosBTN;
     Button pMasBTN;
@@ -44,6 +49,8 @@ public class FoodOrderActivity extends AppCompatActivity {
         fillings = "";
         setContentView(R.layout.activity_food_order);
 
+        subTotalTV = (TextView)findViewById(R.id.subTotalTv);
+        taxTotalTV = (TextView)findViewById(R.id.taxesTotalTV);
         pMenosBTN = (Button)findViewById(R.id.orderMenosPBTN);
         pMasBTN = (Button)findViewById(R.id.orderMasBTN);
         howMuchTV = (TextView)findViewById(R.id.howMuchTV);
@@ -109,7 +116,15 @@ public class FoodOrderActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 fillings=spinnerFillings.getSelectedItem().toString();
+                Log.d("Filling", fillings);
+                deliciuosP = new Pupusas(fillings, howMany);
+                subTotal = deliciuosP.calcPrice();
+                subTotalTV.setText("SubTotal : "+ subTotal);
+
+
+
             }
+
         });
         typeInfoBTN.setOnClickListener(new View.OnClickListener() {
             @Override

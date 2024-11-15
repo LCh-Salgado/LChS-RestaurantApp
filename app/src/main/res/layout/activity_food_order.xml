@@ -118,6 +118,7 @@
         android:layout_height="wrap_content"
         android:textSize="25sp"
         android:textStyle="bold"
+        android:id="@+id/subTotalTv"
         android:text="SubTotal:0.0"/>
 
     <TextView
@@ -125,6 +126,7 @@
         android:layout_height="wrap_content"
         android:textSize="25sp"
         android:textStyle="bold"
+        android:id="@+id/taxesTotalTV"
         android:text="Taxes:0.0"/>
 
     <TextView

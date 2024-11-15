@@ -1,9 +1,12 @@
+package com.example.restaurantapplch;
+
+
 public class Pupusas {
 
     private String filling;
     private int quantity;
     private  double price;
-    private final static double BASE_PRICE = 2.50;
+    private final static double BASE_PRICE = 3.00;
 
     public Pupusas(String filling, int quantity) {
         this.filling = filling;
@@ -40,27 +43,27 @@ public class Pupusas {
     }
     public double calcPrice() {
 
-        if (filling.equals("queso") ){
+        if (filling.contains("Queso") ){
             price=(BASE_PRICE+0)*quantity;
         }
 
-        else if (filling.equals("revueltas")){
+        else if (filling.contains("Revueltas")){
             price=(BASE_PRICE+0.50)*quantity;
         }
 
-        else if (filling.equals("frijol con queso")){
+        else if (filling.contains("Frijol con queso")){
             price=(BASE_PRICE+0.25)*quantity;
         }
-        else if(filling.equals("loroco con queso")) {
+        else if(filling.contains("Loroco con queso")) {
             price=(BASE_PRICE+0.50)*quantity;
         }
-        else if(filling.equals("Chicarron con queso")) {
+        else if(filling.contains("Chicarron con queso")) {
             price=(BASE_PRICE+0)*quantity;
         }
-        else if(filling.equals("Pupusa loca")) {
+        else if(filling.contains("Pupusa loca")) {
             price=(BASE_PRICE+0)*quantity;
         }
-        else if(filling.equals("Jalapeno con queso")) {
+        else if(filling.contains("Jalapeno con queso")) {
             price=(BASE_PRICE+0.50)*quantity;
         }
 
