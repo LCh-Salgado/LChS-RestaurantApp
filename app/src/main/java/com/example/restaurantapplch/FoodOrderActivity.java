@@ -21,24 +21,34 @@ public class FoodOrderActivity extends AppCompatActivity {
 
 //    int typeInfoInt;
     int howMany;
+
     double subTotal;
+
     TextView subTotalTV;
+
     TextView taxTotalTV;
+
     Pupusas deliciuosP;
+
     String fillings;
+
     Button pMenosBTN;
+
     Button pMasBTN;
 
     Intent addToCardIntent;
     Intent typeInfooIntent;
     Spinner spinnerFillings;
-    Spinner spinnerF;
+    Spinner spinnerFillingsPT;
     TextView howMuchTV;
 
    Button orderMorePTBTN;
    Button orderLessPTBTN;
+
    Button addToCadBTN;
    Button typeInfoBTN;
+
+   String fillingsPT;
    int cuantasPasteless;
    TextView cuantassTV;
 
@@ -46,6 +56,8 @@ public class FoodOrderActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         howMany = 0;
+        cuantasPasteless = 0;
+        fillingsPT = "";
         fillings = "";
         setContentView(R.layout.activity_food_order);
 
@@ -56,6 +68,7 @@ public class FoodOrderActivity extends AppCompatActivity {
         howMuchTV = (TextView)findViewById(R.id.howMuchTV);
 
         spinnerFillings = (Spinner) findViewById(R.id.fillings);
+        spinnerFillingsPT = (Spinner)findViewById(R.id.fillingsPasteles);
 
         orderMorePTBTN = (Button)findViewById(R.id.ordenarMasPTBTN);
        orderLessPTBTN = (Button)findViewById(R.id.ordenarMenosPTBTN);
@@ -63,15 +76,20 @@ public class FoodOrderActivity extends AppCompatActivity {
         addToCadBTN = (Button)findViewById(R.id.addToTheCardBTN);
         typeInfoBTN = (Button)findViewById(R.id.typeInfoBTN);
 
-        spinnerF = (Spinner)findViewById(R.id.fillingsPasteles);
+        spinnerFillingsPT = (Spinner)findViewById(R.id.fillingsPasteles);
+
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                this,
-                R.array.fillings_array,
-                android.R.layout.simple_spinner_item
+                this, R.array.fillings_array, android.R.layout.simple_spinner_item
         );
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.fillingsPasteles_array,
+                android.R.layout.simple_spinner_item);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerFillings.setAdapter(adapter);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerFillingsPT.setAdapter(adapter);
 
         pMenosBTN.setOnClickListener(new View.OnClickListener() {
          @Override

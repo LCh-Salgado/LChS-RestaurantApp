@@ -5,10 +5,16 @@
         <item>Queso $3.00</item>
         <item>Frijol con queso $3.00</item>
         <item>Loroco con queso $3.50</item>
-        <item>Chicarron con queso $3.50</item>
+        <item>Chicarron con queso $4.00</item>
         <item>Pupusa Loca $4.00</item>
         <item>Ayote con queso $3.00</item>
         <item>Jalapeno con queso $3.50</item>
+    </string-array>
+
+    <string-array name="fillingsPasteles_array">
+        <item>Carne molida $3.00</item>
+        <item>De Pollo $3.00</item>
+
     </string-array>
 
 
