@@ -32,15 +32,15 @@ public class FoodOrderActivity extends AppCompatActivity {
     Intent addToCardIntent;
     Intent typeInfooIntent;
     Spinner spinnerFillings;
-//    Spinner spinnerF;
+    Spinner spinnerF;
     TextView howMuchTV;
 
-//    Button orderMorePTBTN;
-//    Button orderLessPTBTN;
-    Button addToCadBTN;
-    Button typeInfoBTN;
-//    int cuantasPasteless;
-//    TextView cuantassTV;
+   Button orderMorePTBTN;
+   Button orderLessPTBTN;
+   Button addToCadBTN;
+   Button typeInfoBTN;
+   int cuantasPasteless;
+   TextView cuantassTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,13 +57,13 @@ public class FoodOrderActivity extends AppCompatActivity {
 
         spinnerFillings = (Spinner) findViewById(R.id.fillings);
 
-//        orderMorePTBTN = (Button)findViewById(R.id.ordenarMasPTBTN);
-//        orderLessPTBTN = (Button)findViewById(R.id.ordenarMenosPTBTN);
+        orderMorePTBTN = (Button)findViewById(R.id.ordenarMasPTBTN);
+       orderLessPTBTN = (Button)findViewById(R.id.ordenarMenosPTBTN);
 
         addToCadBTN = (Button)findViewById(R.id.addToTheCardBTN);
         typeInfoBTN = (Button)findViewById(R.id.typeInfoBTN);
 
-//        spinnerF = (Spinner)findViewById(R.id.filling);
+        spinnerF = (Spinner)findViewById(R.id.fillingsPasteles);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.fillings_array,
@@ -93,25 +93,26 @@ public class FoodOrderActivity extends AppCompatActivity {
 
             }
         });
-//        orderMorePTBTN.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                cuantasPasteless ++;
-//                String sMore=Integer.toString(cuantasPasteless);
-//                cuantassTV.setText(sMore);
-//
-//            }
-//        });
-//        orderLessPTBTN.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                cuantasPasteless --;
-//                String sLess=Integer.toString(cuantasPasteless);
-//                cuantassTV.setText(sLess);
-//
-//
-//            }
-//        });
+        orderMorePTBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cuantasPasteless ++;
+                String sMore=Integer.toString(cuantasPasteless);
+                cuantassTV.setText(sMore);
+            }
+
+           }
+        );
+        orderLessPTBTN.setOnClickListener(new View.OnClickListener() {
+           @Override
+            public void onClick(View view) {
+                cuantasPasteless --;
+                String sLess=Integer.toString(cuantasPasteless);
+                cuantassTV.setText(sLess);
+
+
+            }
+        });
         addToCadBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

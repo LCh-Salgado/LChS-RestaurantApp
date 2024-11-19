@@ -52,7 +52,7 @@ public class Pupusas {
         }
 
         else if (filling.contains("Frijol con queso")){
-            price=(BASE_PRICE+0.25)*quantity;
+            price=(BASE_PRICE+0)*quantity;
         }
         else if(filling.contains("Loroco con queso")) {
             price=(BASE_PRICE+0.50)*quantity;
