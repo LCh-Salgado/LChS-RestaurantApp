@@ -23,10 +23,11 @@ public class FoodOrderActivity extends AppCompatActivity {
     int howMany;
 
     double subTotal;
+    double tax;
+    double total;
+    final static double TAX_RATE =0.06;
 
     TextView subTotalTV;
-
-    TextView taxTotalTV;
 
     Pupusas deliciuosP;
 
@@ -39,7 +40,7 @@ public class FoodOrderActivity extends AppCompatActivity {
     Intent addToCardIntent;
     Intent typeInfooIntent;
     Spinner spinnerFillings;
-    Spinner spinnerFillingsPT;
+//    Spinner spinnerFillingsPT;
     TextView howMuchTV;
 
    Button orderMorePTBTN;
@@ -48,48 +49,58 @@ public class FoodOrderActivity extends AppCompatActivity {
    Button addToCadBTN;
    Button typeInfoBTN;
 
-   String fillingsPT;
-   int cuantasPasteless;
-   TextView cuantassTV;
+   TextView taxTV;
+   TextView totalTv;
+
+//   String fillingsPT;
+//   int cuantasPasteless;
+//   TextView cuantassTV;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         howMany = 0;
-        cuantasPasteless = 0;
-        fillingsPT = "";
+//        cuantasPasteless = 0;
+//        fillingsPT = "";
         fillings = "";
+        subTotal = 0.0;
+        tax = TAX_RATE * subTotal;
+        total = subTotal + tax;
+
         setContentView(R.layout.activity_food_order);
 
         subTotalTV = (TextView)findViewById(R.id.subTotalTv);
-        taxTotalTV = (TextView)findViewById(R.id.taxesTotalTV);
+        taxTV = (TextView)findViewById(R.id.taxesTotalTV);
+        totalTv = (TextView)findViewById(R.id.totalTV);
+
         pMenosBTN = (Button)findViewById(R.id.orderMenosPBTN);
         pMasBTN = (Button)findViewById(R.id.orderMasBTN);
         howMuchTV = (TextView)findViewById(R.id.howMuchTV);
 
         spinnerFillings = (Spinner) findViewById(R.id.fillings);
-        spinnerFillingsPT = (Spinner)findViewById(R.id.fillingsPasteles);
+//        spinnerFillingsPT = (Spinner)findViewById(R.id.fillingsPasteles);
 
-        orderMorePTBTN = (Button)findViewById(R.id.ordenarMasPTBTN);
-       orderLessPTBTN = (Button)findViewById(R.id.ordenarMenosPTBTN);
+//        orderMorePTBTN = (Button)findViewById(R.id.ordenarMasPTBTN);
+//       orderLessPTBTN = (Button)findViewById(R.id.ordenarMenosPTBTN);
 
         addToCadBTN = (Button)findViewById(R.id.addToTheCardBTN);
         typeInfoBTN = (Button)findViewById(R.id.typeInfoBTN);
 
-        spinnerFillingsPT = (Spinner)findViewById(R.id.fillingsPasteles);
+//        spinnerFillingsPT = (Spinner)findViewById(R.id.fillingsPasteles);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this, R.array.fillings_array, android.R.layout.simple_spinner_item
         );
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this,
                 R.array.fillingsPasteles_array,
                 android.R.layout.simple_spinner_item);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerFillings.setAdapter(adapter);
 
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerFillingsPT.setAdapter(adapter);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinnerFillingsPT.setAdapter(adapter);
 
         pMenosBTN.setOnClickListener(new View.OnClickListener() {
          @Override
@@ -111,36 +122,38 @@ public class FoodOrderActivity extends AppCompatActivity {
 
             }
         });
-        orderMorePTBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cuantasPasteless ++;
-                String sMore=Integer.toString(cuantasPasteless);
-                cuantassTV.setText(sMore);
-            }
-
-           }
-        );
-        orderLessPTBTN.setOnClickListener(new View.OnClickListener() {
-           @Override
-            public void onClick(View view) {
-                cuantasPasteless --;
-                String sLess=Integer.toString(cuantasPasteless);
-                cuantassTV.setText(sLess);
-
-
-            }
-        });
+//        orderMorePTBTN.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                cuantasPasteless ++;
+//                String sMore=Integer.toString(cuantasPasteless);
+//                cuantassTV.setText(sMore);
+//            }
+//
+//           }
+//        );
+//        orderLessPTBTN.setOnClickListener(new View.OnClickListener() {
+//           @Override
+//            public void onClick(View view) {
+//                cuantasPasteless --;
+//                String sLess=Integer.toString(cuantasPasteless);
+//                cuantassTV.setText(sLess);
+//
+//
+//            }
+//        });
         addToCadBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 fillings=spinnerFillings.getSelectedItem().toString();
                 Log.d("Filling", fillings);
                 deliciuosP = new Pupusas(fillings, howMany);
-                subTotal = deliciuosP.calcPrice();
+                subTotal += deliciuosP.calcPrice();
                 subTotalTV.setText("SubTotal : "+ subTotal);
-
-
+                tax = TAX_RATE * subTotal;
+                taxTV.setText("Taxes : "+ tax);
+                total = subTotal + tax;
+                totalTv.setText("Total : "+ total);
 
             }
 

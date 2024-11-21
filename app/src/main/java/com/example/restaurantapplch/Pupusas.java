@@ -58,13 +58,16 @@ public class Pupusas {
             price=(BASE_PRICE+0.50)*quantity;
         }
         else if(filling.contains("Chicarron con queso")) {
-            price=(BASE_PRICE+0)*quantity;
+            price=(BASE_PRICE+1)*quantity;
         }
-        else if(filling.contains("Pupusa loca")) {
-            price=(BASE_PRICE+0)*quantity;
+        else if(filling.contains("Pupusa Loca")) {
+            price=(BASE_PRICE+1)*quantity;
         }
         else if(filling.contains("Jalapeno con queso")) {
             price=(BASE_PRICE+0.50)*quantity;
+        }
+        else if(filling.contains("Ayote con queso")) {
+            price=(BASE_PRICE+0)*quantity;
         }
 
         return price;

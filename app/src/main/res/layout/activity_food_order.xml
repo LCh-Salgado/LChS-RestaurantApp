@@ -72,54 +72,54 @@
         android:id="@+id/typeInfoBTN"/>
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="vertical">
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:orientation="vertical">-->
 
-    <ImageView
-        android:layout_width="200sp"
-        android:layout_height="200sp"
-        android:src="@drawable/pastele"/>
+<!--    <ImageView-->
+<!--        android:layout_width="200sp"-->
+<!--        android:layout_height="200sp"-->
+<!--        android:src="@drawable/pastele"/>-->
 
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/fillingsPasteles"/>
+<!--    <Spinner-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/fillingsPasteles"/>-->
 
-    </LinearLayout>
+<!--    </LinearLayout>-->
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
+<!--    <LinearLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:gravity="center"-->
+<!--        android:orientation="horizontal">-->
 
-    <Button
-        android:id="@+id/ordenarMenosPTBTN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="-"
-        android:textStyle="bold" />
+<!--    <Button-->
+<!--        android:id="@+id/ordenarMenosPTBTN"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="-"-->
+<!--        android:textStyle="bold" />-->
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        android:text="0"
-        android:id="@+id/cuantassTV"
-        android:textSize="30dp"/>
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textStyle="bold"-->
+<!--        android:text="0"-->
+<!--        android:id="@+id/cuantassTV"-->
+<!--        android:textSize="30dp"/>-->
 
-    <Button
-        android:id="@+id/ordenarMasPTBTN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+"
-        android:textStyle="bold" />
+<!--    <Button-->
+<!--        android:id="@+id/ordenarMasPTBTN"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="+"-->
+<!--        android:textStyle="bold" />-->
 
-    </LinearLayout>
+<!--    </LinearLayout>-->
 
     <TextView
         android:layout_width="wrap_content"
@@ -141,6 +141,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Total:0.0"
+        android:id="@+id/totalTV"
         android:textSize="25sp"
         android:textStyle="bold"/>
 
